@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://holomaker.io/sitemap.xml
+Host: https://holomaker.io
