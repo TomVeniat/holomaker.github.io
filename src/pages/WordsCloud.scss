@@ -1,0 +1,57 @@
+@import './../components/styles';
+
+.WordsCloud {
+  $shadowColor: $modernGreenAccent; // Darker green (more sat, less bright)
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+
+  p {
+    border-radius: 4em;
+    font-size: 1.5em;
+    margin: 1em;
+    background-color: $backgroundColor;
+    color: $modernGreen;
+    font-weight: 700;
+    width: 12rem;
+    height: 12rem;
+    line-height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include breakpoint(small) {
+      font-size: 1em;
+      width: 8rem;
+      height: 8rem;
+      border-radius: 4em;
+      line-height: 1rem;
+      margin: 0.5em;
+    }
+
+    @include notSelectable();
+
+    transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 0px 2px $shadowColor;
+    &:hover {
+      color: $modernGreenAccent;
+      box-shadow: 0 0 0px 6px $shadowColor;
+      // transform: translateY(-5px) translateX(-5px);
+      @include breakpoint(small) {
+        box-shadow: 0 0 0px 6px $shadowColor;
+        // transform: translateY(-2px) translateX(-2px);
+      }
+
+      transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import './../styles/styles.scss';
+
+.Container {
+  padding: 1em;
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  a {
+    margin: 0.2em;
+    padding: 0.2em;
+    @include themedTagA();
+  }
+}

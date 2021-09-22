@@ -1,0 +1,95 @@
+@import '../styles/styles.scss';
+
+.post {
+  display: flex;
+  flex-direction: column;
+
+  // border-radius: 5px;
+  background-color: transparent;
+  // border: solid 2px $black
+  transform: scale(0.98);
+  font-size: 1rem;
+
+  color: $blackLink;
+  opacity: 0.9;
+
+  transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    filter 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none; // Post is a link element
+  // &:hover {
+  //   transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  //   transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  //   filter 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  //   opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  // }
+
+  @include breakpoint(small) {
+    width: 90vw;
+    height: 70vw;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    opacity: 1;
+    &:hover {
+      transform: none;
+      cursor: pointer;
+    }
+  }
+
+  @include breakpoint(normal) {
+    margin: 1em;
+    width: 60vw;
+    height: 30vw;
+    max-width: 30em;
+    max-height: 20em;
+    opacity: 1;
+
+    &:hover {
+      border: none;
+      // transition: border 0.5s ease-out;
+      cursor: pointer;
+      transform: scale(1);
+      color: black;
+      opacity: 1;
+    }
+  }
+
+  .postHead {
+    display: flex;
+    flex-direction: column;
+    .postTitle {
+      // padding: 2em;
+      // border-radius: 5px;
+      font-size: 1.5em;
+      // color: $blackLink;
+      font-weight: 600;
+      padding: 0.5rem;
+      padding-bottom: 0em;
+      padding-left: 0;
+      // background-color: $backgroundColorForText;
+      // box-decoration-break: clone;
+      margin-bottom: 0;
+    }
+
+    .postSubtitle {
+      // border-radius: 5px;
+      font-size: 1em;
+      // color: $blackLink;
+      // background-color: $backgroundText;
+      box-decoration-break: clone;
+      padding: 0.5rem;
+      padding-left: 0;
+    }
+  }
+  .postPicture {
+    flex-grow: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+
+    &:hover {
+      // filter: saturate(1.1);
+    }
+  }
+}

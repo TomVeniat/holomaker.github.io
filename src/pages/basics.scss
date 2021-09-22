@@ -1,0 +1,172 @@
+@import './../components/styles';
+
+.ResponsiveContainer {
+  display: flex;
+  justify-content: center;
+
+  .Inside {
+    @include breakpoint(normal) {
+      min-width: 60rem;
+      max-width: 90rem;
+    }
+    @include breakpoint(small) {
+      min-width: 90vw;
+    }
+  }
+}
+
+.BasicWhiteBack {
+  background-color: rgb(240, 240, 240);
+}
+
+.ModernGreenBack {
+  background-color: $modernGreen;
+}
+
+.ModernGreenText {
+  color: $modernGreen;
+}
+
+.greenLink {
+  font-size: 1.5rem;
+  display: grid;
+  justify-self: center;
+  justify-items: center;
+
+  a {
+    align-self: center;
+    font-size: 1.5em;
+    text-align: center;
+    margin: 1rem;
+    padding: 1rem;
+    $underlineColor: $accentColor;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    background-color: $modernGreen;
+    color: white;
+    @include basicTransition();
+    &:hover {
+      outline: 0;
+      @include basicTransition();
+      cursor: pointer;
+      background-color: $modernGreenAccent;
+      // background-color: $accentLight;
+    }
+
+    &:visited {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    &:active,
+    &:focus {
+      outline: 0;
+      -moz-outline-style: none;
+    }
+  }
+}
+
+.greenButton {
+  align-self: center;
+  font-size: 1.5em;
+  text-align: center;
+  margin: 1rem;
+  padding: 1rem;
+  $underlineColor: $accentColor;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  background-color: $modernGreen;
+  color: white;
+  @include basicTransition();
+  &:hover {
+    outline: 0;
+    @include basicTransition();
+    cursor: pointer;
+    background-color: $modernGreenAccent;
+    // background-color: $accentLight;
+  }
+
+  &:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:active,
+  &:focus {
+    outline: 0;
+    -moz-outline-style: none;
+  }
+}
+
+.FlexboxBasicRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.FullPageContainer {
+  padding: 2em;
+  @include breakpoint(small) {
+    padding: 0.2em;
+  }
+  display: flex;
+  flex-direction: column;
+}
+
+.HighlightEvent {
+  border: solid 10px $accentColor;
+  min-height: 80vh;
+}
+
+.BackgroundWhite {
+  background-color: white;
+  color: black;
+
+  .MainTitle {
+    font-size: 3em;
+    font-weight: 900;
+  }
+}
+
+.ResponsiveIframe {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+  z-index: -1; // useful to hide videos when overlaying all page
+  iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border: 0;
+  }
+}
+
+.GatsbyImageContainer {
+  margin: auto;
+
+  @include breakpoint(normal) {
+    min-width: 60%;
+    width: 60%;
+  }
+
+  @include breakpoint(small) {
+    min-width: 90%;
+  }
+}
+
+.GatsbyImageContainerSmall {
+  @include breakpoint(normal) {
+    // min-width: 60%;
+    width: 50%;
+    // height: 60vh;
+  }
+
+  @include breakpoint(small) {
+    min-width: 90%;
+  }
+}

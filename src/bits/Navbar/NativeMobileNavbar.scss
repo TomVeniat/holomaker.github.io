@@ -1,0 +1,98 @@
+@import '../styles/styles.scss';
+
+.NativeMobileNavbar {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: var(
+    --theme-ui-colors-navigation-background,
+    rgba(255, 255, 255, 0.985)
+  );
+  border-color: var(--theme-ui-colors-ui-border, #f0f0f2);
+  border-top-style: solid;
+  border-top-width: 1px;
+  bottom: 0rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: 'Newsreader', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  left: 0rem;
+  padding-bottom: env(safe-area-inset-bottom);
+  position: fixed;
+  right: 0rem;
+  z-index: 5;
+
+  .insideNav {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 2px;
+    color: $accentColorIdle;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-grow: 1;
+    -ms-flex-negative: 1;
+    flex-grow: 1;
+    font-size: 0.875rem;
+    line-height: 1;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    width: 4rem;
+    height: 4rem;
+
+    @mixin hoverStyle() {
+      background-color: $accentColor;
+      content: ' ';
+      height: 2px;
+      width: 90%;
+      position: absolute;
+      border-bottom-left-radius: 2px;
+      border-bottom-right-radius: 2px;
+      left: 50%;
+      top: -1px;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+    &:hover {
+      &:before {
+        @include hoverStyle();
+      }
+    }
+    &:active {
+      &:before {
+        @include hoverStyle();
+      }
+      color: $accentColor;
+      font-weight: 700;
+    }
+
+    &.forceActive {
+      &:before {
+        @include hoverStyle();
+      }
+      color: $accentColor;
+      font-weight: 700;
+    }
+  }
+}

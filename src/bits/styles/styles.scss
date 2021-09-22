@@ -1,0 +1,101 @@
+// Default theme:
+
+$blackLink: #4c4c4c;
+$backgroundColorForText: #fafafa;
+$backgroundColor: rgb(240, 240, 240);
+$navbarColor: rgb(240, 240, 240);
+$accentColor: #3568cf;
+$accentColorIdle: rgb(77, 102, 153);
+$colorIdle: #919191;
+$colorUnselected: rgb(200, 200, 200);
+
+// Possibility to override through this file
+@import '../../components/bitStyleOverride.scss';
+
+$colorHover: $accentColorIdle;
+$colorActive: $accentColor; //#ed9e38; // 50 50 50
+
+@mixin breakpoint($class) {
+  @if $class == small {
+    @media (max-width: 61em) {
+      @content;
+    }
+  } @else if $class == normal {
+    @media (min-width: 61em) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint mixin supports: small, normal";
+  }
+}
+
+@mixin basicTransition() {
+  transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@mixin basicTransition($type: all) {
+  transition: $type 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@mixin notSelectable() {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+@mixin themedTagA() {
+  $underlineColor: rgba(#95e5e9, 0.7); //rgba(150,150,150, 0.5);
+  text-decoration: none;
+  border-bottom: 4px solid $underlineColor;
+  color: #ffffff;
+  line-height: 1.5;
+  @include basicTransition();
+  &:hover {
+    background-color: $underlineColor;
+    border-bottom: 4px solid transparent;
+
+    outline: 0;
+    @include basicTransition();
+  }
+
+  &:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:active,
+  &:focus {
+    outline: 0;
+    -moz-outline-style: none;
+    outline-style: none;
+  }
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  background-color: $backgroundColor;
+}
+
+// Possibility to override through this file
+@import '../../components/bitMixinOverride.scss';

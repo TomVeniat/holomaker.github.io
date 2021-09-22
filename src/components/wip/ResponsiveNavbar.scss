@@ -1,0 +1,153 @@
+@import 'styles';
+
+$linkColorIdle: rgba(240, 240, 240, 1);
+$linkColorActive: white;
+$smallTopbarHeight: 4.5em;
+
+.ResponsiveNavbar {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  background-color: $navbarColor;
+  @include breakpoint(small) {
+    padding: 0;
+  }
+
+  text-align: center;
+
+  .MiniBar {
+    display: none;
+    padding-left: 1em;
+    padding-right: 1em;
+    background-color: $navbarColor;
+
+    @include breakpoint(small) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    min-height: $smallTopbarHeight;
+
+    .Title {
+      font-weight: 900;
+      color: $linkColorActive;
+    }
+  }
+
+  .Overlay {
+    position: fixed;
+    top: $smallTopbarHeight;
+    left: 0;
+    height: calc(100vh - #{$smallTopbarHeight});
+    width: 100vw;
+    z-index: 101;
+    background-color: $navbarColor;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow: hidden;
+    transition: none;
+    @include breakpoint(normal) {
+      display: none;
+    }
+
+    .SmallLinks {
+      flex-grow: 1;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+
+      a {
+        align-self: center;
+        font-size: 1.6em;
+        text-align: center;
+        padding: 1rem;
+
+        &:visited {
+          text-decoration: none;
+        }
+        &:active,
+        &:focus {
+          outline: 0;
+          -moz-outline-style: none;
+        }
+      }
+    }
+
+    button {
+      align-self: center;
+      border: none;
+      background-color: transparent;
+
+      @include themedTagA();
+      color: rgb(220, 220, 220);
+      font-size: 1.3em;
+      margin-bottom: 1em;
+    }
+  }
+
+  .headerLinksCommon {
+    .active {
+      color: $linkColorActive;
+      /*background-color: #4e4e4e;*/
+      font-weight: 900;
+    }
+
+    a {
+      color: $linkColorIdle;
+      border: solid 2px transparent;
+      text-decoration: none;
+
+      &:hover {
+        color: $linkColorActive;
+        cursor: pointer;
+        text-decoration: none;
+        -webkit-transition: all 0.1s ease-in-out 0s;
+        transition: all 0.1s ease-in-out 0s;
+      }
+
+      &:active,
+      &:focus {
+        outline: 0;
+        -moz-outline-style: none;
+      }
+    }
+  }
+
+  .BigLinks {
+    font-size: 1.2em;
+    display: none;
+    @include breakpoint(small) {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    @include breakpoint(normal) {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    a {
+      padding: 0.8em;
+      margin: 0;
+      margin-right: 2em;
+      margin-left: 2em;
+
+      &:active,
+      &:focus {
+        outline: 0;
+        -moz-outline-style: none;
+      }
+
+      @include breakpoint(normal) {
+        text-align: right;
+      }
+      @include breakpoint(small) {
+        text-align: center;
+      }
+    }
+  }
+}

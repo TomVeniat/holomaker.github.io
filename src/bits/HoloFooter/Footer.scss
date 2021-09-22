@@ -1,0 +1,170 @@
+@import './../styles/styles';
+$color: rgb(230, 230, 230);
+
+.Separator {
+  background-color: $color;
+  border: none;
+  height: 3px;
+
+  width: 50px;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.Footer {
+  color: $color;
+
+  @include breakpoint(normal) {
+    min-width: 50rem;
+    max-width: 90rem;
+  }
+  @include breakpoint(small) {
+    min-width: 90vw;
+  }
+
+  .Links {
+    padding-top: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    @include breakpoint(small) {
+      flex-direction: row;
+    }
+    text-align: center;
+    a {
+      @include themedTagA();
+      margin: 0.5em;
+    }
+  }
+  .Inside {
+    padding-top: 3em;
+    margin-bottom: 3em;
+    font-size: 0.8em;
+    line-height: 1.4em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    @include breakpoint(small) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    a {
+      outline: 0;
+    }
+
+    p {
+      text-align: center;
+      color: $color;
+    }
+
+    div {
+      // border: 3px solid red;
+      @include breakpoint(small) {
+        margin: 2em;
+      }
+    }
+    .Header {
+      font-size: 2em;
+      font-weight: 600;
+      margin-bottom: 0.4em;
+    }
+
+    @mixin threeBlocksMiddleCentered {
+      @include breakpoint(small) {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+      }
+      @include breakpoint(normal) {
+        width: 30vw;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+      }
+    }
+    .logo {
+      @include threeBlocksMiddleCentered();
+      align-self: center;
+
+      .tldpFooterLogo {
+        @include breakpoint(small) {
+          padding: 0.5rem;
+        }
+        //width: 16em;
+      }
+    }
+
+    @mixin textContent() {
+      font-size: 1.2em;
+      text-align: center;
+      color: $color;
+      line-height: 1.6;
+      a {
+        @include themedTagA();
+      }
+    }
+
+    .contact {
+      @include threeBlocksMiddleCentered();
+      .contactInfos {
+        @include textContent();
+      }
+    }
+
+    .followUs {
+      @include threeBlocksMiddleCentered();
+
+      .followUsStuff {
+        @include textContent();
+      }
+    }
+  }
+
+  .socialLinks {
+    padding-left: 1em;
+    padding-right: 1em;
+    display: flex;
+    flex-direction: column;
+
+    .social-media-list {
+      display: flex;
+      flex-direction: row;
+      font-size: 1em;
+      justify-content: center;
+
+      .socialIcon {
+        .svg-icon {
+          width: 30px;
+          height: 30px;
+          margin-left: 10px;
+          margin-right: 10px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+
+          path {
+            fill: $colorUnselected;
+            transition: all 0.2s ease-in;
+          }
+          transition: all 0.2s ease-in;
+
+          &:hover {
+            transition: all 0.1s ease-in;
+
+            path {
+              fill: $colorHover;
+              transition: all 0.1s ease-in;
+            }
+          }
+        }
+      }
+    }
+  }
+}

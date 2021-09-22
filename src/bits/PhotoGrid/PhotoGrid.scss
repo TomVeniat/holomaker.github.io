@@ -1,0 +1,82 @@
+@import '../styles/styles.scss';
+
+.componentPhotoGrid {
+  .pageContent {
+    background-color: $backgroundColorForText;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    a {
+      @include themedTagA();
+    }
+  }
+
+  .pageContainer {
+    @include breakpoint(normal) {
+      width: 50rem;
+    }
+    @include breakpoint(small) {
+      min-width: 90vw;
+    }
+    margin: auto;
+  }
+
+  .photoGrid {
+    display: grid;
+    flex-direction: row;
+    justify-content: stretch;
+    align-content: stretch;
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+  }
+
+  // Thumbnail size is controled by percentage.
+  // flexbox space-between permits to have an even space between pictures but none on the sides (best for mobiles)
+  // We compute the same gap between each row based on this percentage.
+  // Only works properly for 3pics per row.
+  $thumbSizeNormal: 32%;
+  $thumbSizeSmall: 33%;
+  $thumbsPerRow: 3;
+
+  @mixin rowMarginForThumbSize($photoSize) {
+    margin-bottom: calc(#{100-$thumbsPerRow * $photoSize}/#{-1+$thumbsPerRow});
+  }
+
+  .photoThumbnail {
+    @include breakpoint(normal) {
+      width: $thumbSizeNormal;
+      padding-top: $thumbSizeNormal;
+    }
+    @include breakpoint(small) {
+      width: $thumbSizeSmall;
+      padding-top: $thumbSizeSmall;
+    }
+
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    @include basicTransition(all);
+
+    &:hover {
+      // box-shadow: inset 0 0 0px 100000px rgba(0, 0, 0, 0.2); // easy way to get a black overlay
+      cursor: pointer;
+      filter: contrast(1.2);
+      transform: scale(1.01);
+    }
+  }
+
+  .photoRowContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    @include breakpoint(normal) {
+      @include rowMarginForThumbSize($thumbSizeNormal);
+    }
+    @include breakpoint(small) {
+      @include rowMarginForThumbSize($thumbSizeSmall);
+    }
+  }
+}

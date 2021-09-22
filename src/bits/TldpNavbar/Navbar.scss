@@ -1,0 +1,89 @@
+@import '../styles/styles.scss';
+
+.Navbar {
+  @mixin linkStyle() {
+    .active {
+      color: $colorActive;
+      /*background-color: #4e4e4e;*/
+      font-weight: 900;
+    }
+
+    a {
+      text-transform: uppercase;
+      padding: 0.8em;
+      margin: 0;
+      margin-right: 2em;
+      margin-left: 2em;
+      color: $colorIdle;
+      font-size: 1.2em;
+      border: solid 2px transparent;
+      text-decoration: none;
+
+      &:hover {
+        color: $colorActive;
+        cursor: pointer;
+        text-decoration: none;
+        -webkit-transition: all 0.1s ease-in-out 0s;
+        transition: all 0.1s ease-in-out 0s;
+      }
+
+      &:active,
+      &:focus {
+        outline: 0;
+        -moz-outline-style: none;
+      }
+
+      @include breakpoint(normal) {
+        text-align: right;
+      }
+      @include breakpoint(small) {
+        text-align: center;
+      }
+    }
+  }
+
+  .SmallNavbar {
+    // Final
+    @include breakpoint(normal) {
+      display: none;
+    }
+  }
+
+  .MobileAppBar {
+    margin-bottom: 1em;
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    // Perfect size for horizontal tldp logo
+    .MobileLogo {
+      width: 17rem;
+      height: 3rem;
+    }
+
+    @include linkStyle();
+    a {
+      font-size: 1.1em;
+      font-weight: 600;
+      padding: 1em;
+      color: $accentColorIdle;
+      &:hover {
+        color: $accentColor;
+      }
+      margin: 0;
+      // box-shadow: inset 0 -2px 0 0 $accentColorIdle;
+    }
+    // Final
+    @include breakpoint(normal) {
+      display: 'none';
+    }
+  }
+
+  .BigNavbar {
+    @include breakpoint(small) {
+      display: none;
+    }
+  }
+}

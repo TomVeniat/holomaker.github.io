@@ -1,0 +1,186 @@
+@import './../components/styles';
+
+.ShowcasePage {
+  .WelcomerCoverPhoto {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .WelcomeCover {
+    $height: 90vh;
+    min-height: $height;
+    line-height: 2;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+
+    .Inside {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.2);
+
+      @include breakpoint(normal) {
+        //justify-content: center;
+        justify-content: flex-start;
+      }
+      @include breakpoint(small) {
+        justify-content: flex-start;
+      }
+
+      h2 {
+        font-size: 4rem;
+        font-weight: 900;
+        line-height: 1.3;
+      }
+      p {
+        line-height: 1.3;
+        font-size: 2.3em;
+        max-width: 30em;
+        margin: 0 auto;
+        margin-top: auto;
+        margin-bottom: 1em;
+        padding: 0.5em;
+        // background-color: $accentColor;
+
+        @include breakpoint(small) {
+          font-size: 1.3em;
+          margin-top: auto;
+          margin-bottom: 3em;
+          padding-left: 1em;
+          padding-right: 1em;
+        }
+      }
+
+      .CoverLogo {
+        width: 20rem;
+        height: 20rem;
+        margin: auto;
+        margin-bottom: 0;
+        opacity: 0.9;
+
+        @include breakpoint(small) {
+          width: 12rem;
+          height: 12rem;
+        }
+      }
+    }
+  }
+
+  .ShowcasePart {
+    $almostBlack: #111111;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    @include breakpoint(normal) {
+      flex-direction: row;
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+    @include breakpoint(small) {
+      flex-direction: column;
+      padding: 0rem;
+      padding-top: 2em;
+      padding-bottom: 2em;
+      align-items: center;
+    }
+
+    &.Column {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .Text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 1.3em;
+
+      @include breakpoint(small) {
+        padding: 0.5em;
+      }
+      @include breakpoint(normal) {
+        padding: 2em;
+        max-width: 50em;
+      }
+
+      h2 {
+        font-size: 2em;
+        font-weight: 600;
+        color: $modernGreenAccent;
+      }
+
+      p {
+        line-height: 1.5;
+      }
+
+      &.Centered {
+        text-align: center;
+      }
+    }
+
+    .PhotogridContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      @include breakpoint(normal) {
+        max-width: 70rem;
+      }
+
+      .PaddingForNormalSize {
+        @include breakpoint(normal) {
+          padding: 2em;
+        }
+      }
+    }
+  }
+
+  .ClientsLogo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 90vw;
+
+    a {
+      @include breakpoint(small) {
+        min-width: 8em;
+        min-height: 8em;
+        margin: 1em;
+      }
+      @include breakpoint(normal) {
+        min-width: 12em;
+        min-height: 12em;
+        margin: 3em;
+      }
+    }
+
+    @mixin imageBackground() {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0.7;
+      filter: grayscale(100%);
+
+      @include basicTransition();
+      &:hover {
+        @include basicTransition();
+        cursor: pointer;
+        filter: none;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.NarrowText {
+  @include breakpoint(normal) {
+    width: 14rem;
+  }
+}

@@ -1,0 +1,88 @@
+@import '../styles/styles.scss';
+
+.Separator {
+  $color: gray;
+  background-color: $color;
+  border: none;
+  height: 3px;
+
+  width: 50px;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.Footer {
+  padding-top: 3em;
+  font-size: 0.8em;
+  line-height: 1.4em;
+
+  a {
+    outline: 0;
+  }
+
+  .Links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    a {
+      @include themedTagA();
+      margin: 0.5em;
+    }
+  }
+
+  .mail {
+    a {
+      @include themedTagA();
+    }
+  }
+
+  p {
+    text-align: center;
+    color: dimgray;
+  }
+
+  .socialLinks {
+    padding-left: 1em;
+    padding-right: 1em;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3em;
+
+    .social-media-list {
+      display: flex;
+      flex-direction: row;
+      font-size: 1em;
+      justify-content: center;
+
+      .socialIcon {
+        .svg-icon {
+          width: 30px;
+          height: 30px;
+          margin-left: 10px;
+          margin-right: 10px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+
+          path {
+            fill: $colorUnselected;
+            transition: all 0.2s ease-in;
+          }
+          transition: all 0.2s ease-in;
+
+          &:hover {
+            transition: all 0.1s ease-in;
+
+            path {
+              fill: $colorHover;
+              transition: all 0.1s ease-in;
+            }
+          }
+        }
+      }
+    }
+  }
+}
