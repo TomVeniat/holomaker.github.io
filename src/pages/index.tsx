@@ -22,7 +22,7 @@ import Marquee from 'react-fast-marquee';
 import MonolithVisualisation from './../components/MonolithVisualisation/MonolithVisualisation';
 import Slider from 'react-slick';
 
-import MailForm from './../components/mailchimpForm/mailchimpForm';
+import MailForm from './../components/mailchimpForm/mailchimpFormPrivacyFriendly';
 import { breakpointKey } from './../components/styles';
 const numberOfEventsToShow = 6;
 const icon = {

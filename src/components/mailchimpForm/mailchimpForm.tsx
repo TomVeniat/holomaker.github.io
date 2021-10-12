@@ -1,27 +1,8 @@
 import React, { useState } from 'react';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
-import './mailchimpForm.scss';
+import {buttonCSS, form__groupCSS, form__fieldCSS, form__labelCSS, formCSS} from './styles';
 
-const buttonCSS: CSSObject = {
-  backgroundImage:
-    'linear-gradient(-225deg, #9EFBD3 0%, #57E9F2 48%, #45D4FB 100%)',
-  borderRadius: '100rem',
-  border: 'none',
-  fontWeight: 900,
-  // backgroundColor: 'black',
-  color: 'black',
-  padding: '1em 2em 1em 2em',
-  margin: '1em',
-  transition: 'all 150ms linear',
-  filter: 'saturate(1)',
 
-  '&:hover': {
-    transform: 'scale(1.1)',
-    cursor: 'pointer',
-    transition: 'all 150ms linear',
-    filter: 'saturate(1.3)',
-  },
-};
 
 // const EmailListForm: React.FunctionComponent<{}> = () => {
 
@@ -49,26 +30,19 @@ export default function emailListForm({ callName, uniqueId }: OwnProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      css={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: '2rem',
-        marginBottom: '2rem',
-      }}
+      css={formCSS}
     >
-      <div class="form__group field">
+      <div css={form__groupCSS}>
         <input
           type="email"
-          class="form__field"
+          css={form__fieldCSS}
           placeholder="Email"
           name="email"
           id={uniqueId}
           onChange={handleEmailChange}
           required
         />
-        <label for={uniqueId} class="form__label">
+        <label for={uniqueId} css={form__labelCSS} className={'formLabel'}>
           Email
         </label>
         <button type="submit" css={buttonCSS}>
