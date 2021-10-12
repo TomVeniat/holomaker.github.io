@@ -1,7 +1,5 @@
 import React from 'react';
 import { notFoundPage } from '../locales/strings';
-import { NavbarSlim } from '../bits/NavbarSlim/NavbarSlim';
-import { NavbarData } from '../layout/Data';
 
 // TODO: dirty copy paste of MainLayout content to avoid crazy language switcher (because URL doesnt exist)
 
@@ -11,9 +9,7 @@ export default function NotFoundPage({ data, pageContext: { langCode } }) {
   return (
     <>
       <div className="CssGridNavContentFooter">
-        <nav className="gridNavBar">
-          <NavbarSlim links={NavbarData[langCode].links} />
-        </nav>
+       
         <div className="gridContent styleContent">
           <div
             style={{
