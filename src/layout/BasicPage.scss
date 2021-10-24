@@ -18,6 +18,7 @@
   }
 
   .gatsby-resp-image-link {
+
     border: none;
     &:hover {
       border: none;
@@ -26,7 +27,8 @@
     }
   }
 
-  background-color: $backgroundColorForText;
+  background-color:rgb(10,10,10);
+  color: white;
   display: flex;
   justify-content: center;
 
