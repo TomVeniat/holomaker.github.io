@@ -213,8 +213,12 @@ export default class Footer extends React.Component {
                       <a href="mailto:contact@holomaker.io">contact@holomaker.io</a>
                     </p>
                     <p>
-                      <strong>Maxime TOUROUTE</strong><br/>
+                      <strong>Maxime TOUROUTE, CEO</strong><br/>
                       <a href="telto:+33650847419"> +33 6 50 84 74 19</a>
+                    </p>
+                    <p>
+                      <strong>Tom VENIAT, CTO</strong><br/>
+                      <a href="telto:+33649760286"> +33 6 49 76 02 86</a>
                     </p>
                     {/* <Link to={'/contact'}>{strings.moreContacts[lang]}</Link> */}
                   </div>
