@@ -487,8 +487,12 @@ export default function Index({ data, pageContext: { langCode }, location }) {
               backgroundColor: 'rgb(10,10,10)',
               // Only solution found to keep responsiveness
               width: '90vw',
-              margin: 'auto'
+              margin: 'auto',
+              overflow: 'hidden',
+              fontSize: '2rem',
+              textTransform: 'uppercase'
             }}
+            speed={40}
           >
             <div css={marqueBlockCSS}>{LOCAL['narrative']}</div>
             <div css={marqueBlockCSS}>{LOCAL['fiction']}</div>
