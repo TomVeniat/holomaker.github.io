@@ -51,7 +51,7 @@ export default function emailListForm({ callName, uniqueId }: OwnProps) {
                 />
             </div>
             <br/><br/>
-            <div className="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" css={buttonCSS} /></div>
+            <div className="clear"><input type="submit" value={callName} name="subscribe" id="mc-embedded-subscribe" css={buttonCSS} /></div>
             </div>
 
         <div id="mce-responses" className="">
