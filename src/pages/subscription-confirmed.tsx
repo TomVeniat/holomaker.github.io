@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import MainLayout from '../layout/MainLayout';
 import SEO from '../bits/SEO/SEO';
-import { notFoundPageStrings } from '../locales/strings';
+import { subscribedPageStrings } from '../locales/strings';
 
 
 import { breakpointKey } from '../components/styles';
@@ -50,7 +50,7 @@ const subtitleCSS: CSSObject = {
 }
 
 export default function SubscriptionConfirmed({ data, pageContext: { langCode }, location }) {
-  const LOCAL = notFoundPageStrings[langCode];
+  const LOCAL = subscribedPageStrings[langCode];
 
   return (
     <MainLayout language={langCode} location={{ ...location }}>
