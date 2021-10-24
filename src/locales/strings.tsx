@@ -195,13 +195,23 @@ export const indexPageStrings = stringBuilderEnFr([
   ),
 ]);
 
-export const notFoundPage = {
-  en: {
-    title: `NOT FOUND`,
-    subtext: `There is nothing here !`,
-  },
-  fr: {
-    title: `PAGE NON TROUVÉE`,
-    subtext: `Il n'y a rien ici !`,
-  },
-};
+export const notFoundPageStrings = stringBuilderEnFr([
+  StringEnFr('seoTitle', 'Subscription Confirmed', 'Inscription confirmée'),
+  StringEnFr(
+    'divTitle',
+    'Subscription confirmed!',
+    `Inscription confirmée !`
+  ),
+  StringEnFr(
+    'divSubtitle',
+    'You will receive a confirmation mail shortly.',
+    `Vous allez recevoir un mail de confirmation sous peu.`
+  ),
+  StringEnFr(
+    'goBackHome',
+    'Go back Home',
+    `Retour Accueil`
+  ),
+  
+]
+  );

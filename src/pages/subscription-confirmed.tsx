@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import MainLayout from '../layout/MainLayout';
 import SEO from '../bits/SEO/SEO';
-import { indexPageStrings } from '../locales/strings';
+import { notFoundPageStrings } from '../locales/strings';
 
 
 import { breakpointKey } from '../components/styles';
@@ -50,17 +50,16 @@ const subtitleCSS: CSSObject = {
 }
 
 export default function SubscriptionConfirmed({ data, pageContext: { langCode }, location }) {
-  const LOCAL = indexPageStrings[langCode];
+  const LOCAL = notFoundPageStrings[langCode];
 
   return (
     <MainLayout language={langCode} location={{ ...location }}>
-      <SEO title={'Subscription Confirmed'} langCode={langCode} />
+      <SEO title={LOCAL['seoTitle']} langCode={langCode} />
       <div css={containerCSS}>
-      <h1 css={titleCSS}>Subscription confirmed!</h1>
-      <p css={subtitleCSS}>You will receive a confirmation mail shortly</p>
-      <Link to='/' css={buttonCSS}>Go back Home</Link>
+      <h1 css={titleCSS}>{LOCAL['divTitle']}</h1>
+      <p css={subtitleCSS}>{LOCAL['divSubtitle']}</p>
+      <Link to='/' css={buttonCSS}>{LOCAL['goBackHome']}</Link>
       </div>
-       
     </MainLayout>
   );
 }
